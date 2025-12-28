@@ -4,34 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextWin - AI Bet Analyzer</title>
+    <title>Website Availability Analyzer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'brand-dark': '#1A102B',
-              'brand-purple': '#A855F7',
-              'brand-pink': '#EC4899',
-              'brand-orange': '#F97316',
-            },
-          },
-        },
-      }
-    </script>
-  <script type="importmap">
+    <!-- Add Babel for in-browser JSX/TSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react/jsx-runtime": "https://esm.sh/react@^19.2.3/jsx-runtime",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
 </head>
-  <body class="bg-brand-dark text-slate-200">
+  <body class="bg-slate-900 text-white">
     <div id="root"></div>
+    <!-- Load the main app script. Babel will transpile it from TSX to JS. -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
